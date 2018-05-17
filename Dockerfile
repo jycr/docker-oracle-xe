@@ -33,7 +33,7 @@ RUN set -ex \
     && chmod +x /assets/*.sh \
     && DEBIAN_FRONTEND=noninteractive \
     && apt-get update \
-    && apt-get install -y --no-install-recommends \
+    && apt-get install -y \
         $BUILD_PACKAGES \
         $RUN_PACKAGES \
     && /assets/setup.sh "$PRODUCT_VERSION" "$PRODUCT_URL" "$PRODUCT_SHA" \
