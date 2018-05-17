@@ -42,7 +42,6 @@ RUN set -ex \
     && rm -rf /var/lib/apt/lists/*
 
 
-EXPOSE 22
 EXPOSE 1521
 EXPOSE 8080
 
