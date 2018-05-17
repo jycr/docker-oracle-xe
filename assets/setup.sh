@@ -10,7 +10,7 @@ PRODUCT_INSTAL_FILENAME="oracle-xe_${PRODUCT_VERSION}-2_amd64"
 WORK_DIR="$(mktemp -d)"
 pushd "$WORK_DIR"
 
-wget https://github.com/wnameless/docker-oracle-xe-11g/raw/master/assets/oracle-xe_11.2.0-1.0_amd64.deba{a,b,c}
+wget https://raw.githubusercontent.com/wnameless/docker-oracle-xe-11g/master/assets/oracle-xe_11.2.0-1.0_amd64.deba{a,b,c}
 cat oracle-xe_*.deba* > "$PRODUCT_INSTAL_FILENAME.deb" &&
 
 echo "${PRODUCT_SHA} $PRODUCT_INSTAL_FILENAME.deb" | sha512sum -c - &&
