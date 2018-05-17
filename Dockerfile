@@ -3,9 +3,14 @@ FROM debian:stable-slim
 ARG BUILD_PACKAGES="\
     curl \
     unzip \
-    wget \
-    alien \
 "
+#ARG BUILD_PACKAGES="\
+#    curl \
+#    unzip \
+#    wget \
+#    alien \
+#"
+
 ARG RUN_PACKAGES="\
     bc \
     libaio1 \
