@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM debian:stable-slim
 
 ARG BUILD_PACKAGES="\
     curl \
@@ -24,18 +24,18 @@ ARG PRODUCT_URL=https://www.marco-gatti.com/debian/squeeze/unstable/oracle-xe_${
 #Unable to download package from official website
 #ARG PRODUCT_URL=http://download.oracle.com/otn/linux/oracle11g/xe/oracle-xe-11.2.0-1.0.x86_64.rpm.zip
 
-ADD assets /assets
+COPY assets /assets
 
 # unzip oracle-xe_amd64.rpm.zip
 # 
 
 RUN set -ex \
+    && chmod +x /assets/*.sh \
     && DEBIAN_FRONTEND=noninteractive \
     && apt-get update \
-    && apt-get install -y \
+    && apt-get install -y --no-install-recommends \
         $BUILD_PACKAGES \
         $RUN_PACKAGES \
-    && chmod +x /assets/*.sh \
     && /assets/setup.sh "$PRODUCT_VERSION" "$PRODUCT_URL" "$PRODUCT_SHA" \
     && apt-get remove --purge -y \
         $BUILD_PACKAGES \
