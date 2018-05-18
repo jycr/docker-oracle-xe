@@ -14,6 +14,7 @@ ARG BUILD_PACKAGES="\
 ARG RUN_PACKAGES="\
     bc \
     libaio1 \
+    procps \
     net-tools \
     unixodbc \
 "
@@ -24,7 +25,7 @@ ENV PRODUCT_VERSION=11.2.0
 ARG PRODUCT_SHA=93710c1f4abc72839827be1a55274b6172009afb98de4581baab6351b7345363ed8b5b7517bfe16a722ba0744041397b63026a0cacfeb7b2408111f1d48811d4
 
 # Can be used to customize where package get downloaded from
-ARG PRODUCT_URL=https://www.marco-gatti.com/debian/squeeze/unstable/oracle-xe_${PRODUCT_VERSION}-1.0_amd64.deb
+ARG PRODUCT_URL="https://raw.githubusercontent.com/wnameless/docker-oracle-xe-11g/master/assets/oracle-xe_${PRODUCT_VERSION}-1.0_amd64.deba[a-c]"
 
 #Unable to download package from official website
 #ARG PRODUCT_URL=http://download.oracle.com/otn/linux/oracle11g/xe/oracle-xe-11.2.0-1.0.x86_64.rpm.zip

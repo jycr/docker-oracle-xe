@@ -18,7 +18,7 @@ export DEBIAN_FRONTEND=noninteractive
 WORK_DIR="$(mktemp -d)"
 pushd "$WORK_DIR" &&
 
-curl -L -v -O https://raw.githubusercontent.com/wnameless/docker-oracle-xe-11g/master/assets/oracle-xe_11.2.0-1.0_amd64.deba[a-c] &&
+curl -L -v -O "$PRODUCT_URL" &&
 cat oracle-xe_*.deba* > "$PRODUCT_INSTAL_FILENAME.deb" &&
 
 echo "${PRODUCT_SHA} $PRODUCT_INSTAL_FILENAME.deb" | sha512sum -c - &&
