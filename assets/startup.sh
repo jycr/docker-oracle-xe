@@ -11,7 +11,7 @@ function updateParameter() {
   if [ ! -z "$paramValue" ]; then
     echo "Set parameter: $paramName=$paramValue"
     sed -i -r "/^$paramName=/d" $PRODUCT_HOME/xe/config/scripts/init.ora
-    echo -e "$paramName=$paramValue" >> $PRODUCT_HOME/xe/config/scripts/init.ora
+    echo -e -n "\n$paramName=$paramValue" >> $PRODUCT_HOME/xe/config/scripts/init.ora
   fi
 }
 updateParameter processes $ORACLE_PROCESSES

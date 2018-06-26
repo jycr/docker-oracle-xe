@@ -87,7 +87,7 @@ ADD init.sql /docker-entrypoint-initdb.d/
 Use corresponding environment variables:
 - ORACLE_PROCESSES
 - ORACLE_SESSIONS
-- ORACLE_SESSIONS
+- ORACLE_TRANSACTIONS
 
 For example:
 
