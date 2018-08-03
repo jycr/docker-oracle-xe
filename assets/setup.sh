@@ -62,7 +62,11 @@ chmod +x /usr/sbin/startup.sh &&
 rm -r /assets/ "$WORK_DIR" &&
 
 # Create initialization script folders
-mkdir /docker-entrypoint-initdb.d &&
+mkdir \
+    /docker-entrypoint-initdb.d \
+    /docker-entrypoint-initdb.pre-process.d \
+    /docker-entrypoint-initdb.post-process.d \
+    &&
 
 echo "ALTER PROFILE DEFAULT LIMIT PASSWORD_VERIFY_FUNCTION NULL;" | sqlplus -s SYSTEM/oracle &&
 echo "alter profile DEFAULT limit password_life_time UNLIMITED;" | sqlplus -s SYSTEM/oracle &&
